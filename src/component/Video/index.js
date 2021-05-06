@@ -6,17 +6,13 @@ import YouTube from 'simple-youtube-api';
 import config from '../../config';
 
 const youtube = new YouTube('config.apiKey');
+console.log("api key" +youtube);
 export default () => {
 
     useEffect(()=>{
         callApi();
     },[]);
- const result1 =   youtube.searchVideos('Centuries', 4)
-    .then(results => {
-        console.log(`The video's title is ${results[0].title}`);
-    })
-    console.log(result1)
-    .catch(console.log);
+ 
     const callApi = async () => {
    const result = await youtube.search("ramtoo",5)
    console.log(result);
